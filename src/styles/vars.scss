@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+@import './mixins';
+
+// Import Bulma's core
+@import '~bulma/sass/utilities/_all';
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+// Set your brand colors
+$blue: #0d45a4;
+$grey: #737c84;
+$black: #000000;
+$green: #76bf76;
+$yellow: #f2a449;
+$red: #f75769;
+
+// Update Bulma's global variables
+$family-primary: 'Muli';
+$primary: $blue;
+$primary-light: rgba($primary, 0.6);
+$primary-lighter: rgba($primary, 0.1);
+$link: $primary;
+$text: $black;
+$text-light: $grey;
+
+/**
+ * Extensions
+ */
+$size-8: 0.5rem;
+$size-9: 0.25rem;
+$grey-lightest: hsl(0, 0%, 92%);
+
+/**
+ * General
+ */
+$title-size: $size-4;
+$border: $white-ter;
+
+/**
+ * Forms
+ */
+$input-shadow: none;
+$label-color: $grey;
+
+$input-focus-border-color: $white;
+$input-focus-box-shadow-size: 0 0 0.125em 0.125em;
+
+$button-padding-horizontal: 3.5em;
+
+/**
+ * Table
+ */
+$table-color: $grey;
+$table-cell-border: 1px solid $white-ter;
+$table-cell-padding: 0.75em 0.75em;
+$table-head-background-color: $white-bis;
+$table-row-hover-background-color: $white-bis;
+$table-row-active-color: $primary;
+
+/**
+ * Tabs
+ */
+$tabs-border-bottom-width: 3px;
+$tabs-link-color: $grey;
+$tabs-link-hover-color: $grey;
+$tabs-link-hover-border-bottom-color: $grey;
+$tabs-link-active-border-bottom-color: $primary;
+$tabs-link-hover-border-bottom-color: $primary;
+
+/**
+ * Pagination
+ */
+$pagination-border-color: transparent;
+$pagination-disabled-color: $grey;
+$pagination-disabled-background-color: transparent;
+$pagination-disabled-border-color: transparent;
+$pagination-current-color: $primary;
+$pagination-current-background-color: $primary-lighter;
+$pagination-current-border-color: transparent;
+$pagination-ellipsis-color: $grey;
+
+
+html {
+  &.night {
+    $body-background-color: $dark;
+    $body-color: $dark-invert;
+
+    background-color: $body-background-color;
+    @include transition(background-color 0.4s ease);
+
+    body,
+    .menu-list a {
+      color: $body-color;
+
+      nav img.logo {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+@import './_all.scss';
+
+// Import Bulma and Buefy styles
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
+
+html {
+  height: 100% !important;
+  background-color: #efefef !important;
+}
+
+/**
+ * General
+ */
+.card {
+  border-radius: $radius;
+}
+
+.hero {
+  &.is-primary {
+    @include background-gradient-inverse($primary, lighten($primary, 10%));
+  }
+}
+
+section.form-section {
+  position: relative;
+  padding: 1.75rem 3rem;
+
+  .title {
+    margin-left: $size-9;
+  }
+}
+
+.title:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+/**
+ * Form
+ */
+.field {
+  &:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+}
+
+.label {
+  font-size: $size-small;
+
+  &:not(:last-child) {
+    margin-bottom: 0.3em;
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  font-size: $size-small;
+  font-weight: $weight-semibold;
+  border-radius: $radius-rounded;
+
+  &.is-primary {
+    @include background-horizontal($primary, lighten($primary, 10%));
+  }
+}
+
+.box {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
